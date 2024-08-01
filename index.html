@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodificador</title>
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+    <header class="cabecalho">
+        <img class="cabecalho__logo" src="img/logo.svg" alt="Logo da Alura">
+    </header>
+    <main class="decodificador">
+        <section class="decodificador__funcao">
+            <textarea class="decodificador__funcao__texto" placeholder="Digite seu texto"
+                maxlength="500">Et harum quidem rerum facilis est et expedita distin ctio. Nam libero tempore, cum soluta nobis est elig endi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas as sumenda est, omnis dolor repellendus. Tempori bus autem quibusdam et aut officiis debitis aut rerum ne cessitatibus saepe eveniet ut et voluptates repudian dae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciend is voluptatibus.</textarea>
+            <div class="decodificador__funcao__aviso">
+                <span class="aviso__icone">error</span>
+                <p class="aviso__mensagem">Apenas letras minúsculas e sem acento</p>
+            </div>
+            <div class="decodificador__funcao__botoes">
+                <button class="funcao__botoes__acao" type="submit" onclick="criptografarTexto()">Criptografar</button>
+                <button class="funcao__botoes__acao" type="submit" onclick="descriptografarTexto()">Descriptografar</button>
+            </div>
+        </section>
+        <section class="decodificador__retorno" id="decodificador__retorno">
+            <div class="decodificador__retorno__vazio" id="decodificador__retorno__vazio">
+                <img class="retorno__vazio__imagem" src="img/pessoa_curiosa.svg"
+                    alt="Uma pessoa de joelhos, olhando através de uma lupa">
+                <strong class="retorno__vazio__mensagem">Nenhuma mensagem encontrada</strong>
+                <p class="retorno__vazio__texto">Digite um texto que você deseja criptografar ou descriptografar</p>
+            </div>
+            <div class="decodificador__retorno__sucesso" id="decodificador__retorno__sucesso" style="display: none;">
+                <p class="retorno__sucesso__texto" id="retorno__sucesso__texto">A mensagem foi criptografada com sucesso</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --cor-primaria: #E5E5E5;
+    --cor-secundaria: white;
+    --cor-textarea: #0A3871;
+    --cor-texto: black;
+    --cor-hover: #0A3871;
+    --cor-hover-texto: #FFFFFF;
+
+    --font-texto: "Inter", sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho {
+    padding: 2% 0 0 5%;
+    display: flex;
+}
+
+body{
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.decodificador {
+    padding: 0 5% 0 0;
+    margin-top: -3%;
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.decodificador__funcao {
+    padding: 8% 0 3% 15%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.decodificador__funcao__texto {
+    height: 12em;
+    background-color: transparent;
+    border: 0;
+    resize: none;
+    font-family: var(--font-texto);
+    font-size: 2rem;
+    color: var(--cor-textarea);
+}
+
+.decodificador__funcao__texto:focus {
+    outline: none;
+    border: 2px solid var(--cor-hover);
+    box-shadow: 0 0 10px var(--cor-texto);
+}
+
+::placeholder {
+    color: var(--cor-textarea);
+}
+
+.decodificador__funcao__aviso {
+    padding: 1% 0;
+    display: flex;
+    gap: 1%;
+    align-items: center;
+}
+
+.decodificador__funcao__botoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.funcao__botoes__acao {
+    padding: 3%;
+    width: 50%;
+    gap: 24px;
+    background-color: transparent;
+    border: 2px solid var(--cor-textarea);
+    border-radius: 24px;
+    font-family: var(--font-texto);
+    font-size: 1.5rem;
+    color: var(--cor-texto);
+    cursor: pointer;
+}
+
+.funcao__botoes__acao:hover {
+    background-color: var(--cor-hover);
+    color: var(--cor-hover-texto);
+}
+
+.aviso__icone {
+    font-family: "Material Symbols Outlined";
+    content: "error";
+    color: var(--cor-texto);
+}
+
+.aviso__mensagem {
+    font-family: var(--font-texto);
+    font-size: 0.75rem;
+    color: var(--cor-texto);
+}
+
+.decodificador__retorno {
+    height: auto;
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 32px;
+    background-color: var(--cor-secundaria);
+}
+
+.decodificador__retorno__vazio {
+    padding: 2% 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.retorno__vazio__imagem {
+    width: 100%;
+}
+
+.retorno__vazio__mensagem {
+    width: 90%;
+    font-family: var(--font-texto);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--cor-texto);
+}
+
+.retorno__vazio__texto {
+    font-family: var(--font-texto);
+    font-size: 1rem;
+    color: var(--cor-texto);
+    text-align: center;
+}
+
+.decodificador__retorno__sucesso {
+    padding: 10%;
+}
+
+.retorno__sucesso__texto {
+    font-family: var(--font-texto);
+    font-size: 1.5rem;
+    color: var(--cor-texto);
+    text-align: left;
+    word-wrap: break-word;
+}
