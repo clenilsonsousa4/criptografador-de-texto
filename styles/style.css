@@ -2,19 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root {
-    --cor-primaria: #E5E5E5;
-    --cor-secundaria: white;
-    --cor-textarea: #0A3871;
+    --cor-principal: #E5E5E5;
+    --cor-detalhe: white;
+    --cor-destaque: #0A3871;
     --cor-texto: black;
-    --cor-hover: #0A3871;
     --cor-hover-texto: #FFFFFF;
 
     --font-texto: "Inter", sans-serif;
 }
 
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
 .cabecalho {
@@ -23,44 +22,48 @@
 }
 
 body{
-    box-sizing: border-box;
-    background-color: var(--cor-primaria);
-    color: var(--cor-secundaria);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: var(--cor-principal);
+    color: var(--cor-destaque);
 }
 
 .decodificador {
     padding: 0 5% 0 0;
     margin-top: -3%;
+    margin-bottom: -2%;
+    height: 95vh;
     display: flex;
-    justify-content: space-between;
     gap: 80px;
 }
 
 .decodificador__funcao {
-    padding: 8% 0 3% 15%;
+    padding: 6% 0 8% 15%;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     width: 80%;
 }
 
 .decodificador__funcao__texto {
-    height: 12em;
+    height: 100%;
     background-color: transparent;
     border: 0;
     resize: none;
     font-family: var(--font-texto);
     font-size: 2rem;
-    color: var(--cor-textarea);
+    color: var(--cor-destaque);
 }
 
 .decodificador__funcao__texto:focus {
     outline: none;
-    border: 2px solid var(--cor-hover);
+    border: 2px solid var(--cor-destaque);
     box-shadow: 0 0 10px var(--cor-texto);
 }
 
-::placeholder {
-    color: var(--cor-textarea);
+.decodificador__funcao__texto::placeholder {
+    color: var(--cor-destaque);
 }
 
 .decodificador__funcao__aviso {
@@ -80,9 +83,8 @@ body{
 .funcao__botoes__acao {
     padding: 3%;
     width: 50%;
-    gap: 24px;
     background-color: transparent;
-    border: 2px solid var(--cor-textarea);
+    border: 2px solid var(--cor-destaque);
     border-radius: 24px;
     font-family: var(--font-texto);
     font-size: 1.5rem;
@@ -91,7 +93,7 @@ body{
 }
 
 .funcao__botoes__acao:hover {
-    background-color: var(--cor-hover);
+    background-color: var(--cor-destaque);
     color: var(--cor-hover-texto);
 }
 
@@ -108,17 +110,20 @@ body{
 }
 
 .decodificador__retorno {
+    width: 50%;
     height: auto;
+    margin-bottom: 0.5%;
+    position: relative;
+    z-index: 1;
     display: flex;
-    width: 30%;
     flex-direction: column;
     justify-content: center;
     border-radius: 32px;
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-detalhe);
 }
 
 .decodificador__retorno__vazio {
-    padding: 2% 1%;
+    padding: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,12 +152,128 @@ body{
 
 .decodificador__retorno__sucesso {
     padding: 10%;
+    height: 100%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .retorno__sucesso__texto {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    resize: none;
+    border: 0;
+    cursor: default;
     font-family: var(--font-texto);
     font-size: 1.5rem;
     color: var(--cor-texto);
-    text-align: left;
+    text-align: justify;
     word-wrap: break-word;
+}
+
+.retorno__sucesso__texto:focus {
+    outline: none;
+    border: 0;
+}
+
+.botao__copiar, .botao__apertado {
+    padding: 6.5%;
+    width: 100%;
+    border: 2px solid;
+    border-radius: 24px;
+    font-family: var(--font-texto);
+    font-size: 1.5rem;
+    color: var(--cor-texto);
+    cursor: pointer;
+}
+
+.botao__copiar {
+    background-color: transparent;
+    border-color: var(--cor-destaque);
+}
+
+.botao__copiar:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-hover-texto);
+}
+
+.botao__apertado {
+    background-color: var(--cor-principal);
+    border-color: var(--cor-detalhe);
+}
+
+.rodape {
+    padding: 2% 35% 2% 2%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--cor-destaque);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--font-texto);
+    font-size: 1.5rem;
+    color: var(--cor-hover-texto);
+}
+
+@media(max-width: 920px) {
+    .decodificador {
+        padding: 2% 5%;
+        height: 100vh;
+        margin-bottom: 0;
+        gap: 0;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .decodificador__funcao {
+        padding: 5%;
+        width: 90%;
+    }
+
+    .decodificador__retorno {
+        padding: 2% 3%;
+        width: 90%;
+        height: 30%;
+        position: initial;
+    }
+
+    .retorno__vazio__imagem {
+        display: none;
+    }
+
+    .decodificador__retorno__sucesso {
+        padding: 1% 0;
+    }
+
+    .retorno__sucesso__texto {
+        width: 100%;
+    }
+
+    .botao__copiar, .botao__apertado {
+        padding: 2%;
+        width: 100%;
+    }
+
+    .rodape {
+        padding: 3%;
+        position: initial;
+    }
+}
+
+@media(max-width: 500px) {
+    .decodificador__funcao__botoes {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .funcao__botoes__acao {
+        width: 100%;
+    }
 }

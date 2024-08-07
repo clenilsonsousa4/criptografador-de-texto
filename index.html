@@ -14,8 +14,7 @@
     </header>
     <main class="decodificador">
         <section class="decodificador__funcao">
-            <textarea class="decodificador__funcao__texto" placeholder="Digite seu texto"
-                maxlength="500">Et harum quidem rerum facilis est et expedita distin ctio. Nam libero tempore, cum soluta nobis est elig endi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas as sumenda est, omnis dolor repellendus. Tempori bus autem quibusdam et aut officiis debitis aut rerum ne cessitatibus saepe eveniet ut et voluptates repudian dae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciend is voluptatibus.</textarea>
+            <textarea class="decodificador__funcao__texto" placeholder="Digite seu texto" required></textarea>
             <div class="decodificador__funcao__aviso">
                 <span class="aviso__icone">error</span>
                 <p class="aviso__mensagem">Apenas letras minúsculas e sem acento</p>
@@ -33,12 +32,13 @@
                 <p class="retorno__vazio__texto">Digite um texto que você deseja criptografar ou descriptografar</p>
             </div>
             <div class="decodificador__retorno__sucesso" id="decodificador__retorno__sucesso" style="display: none;">
-                <p class="retorno__sucesso__texto" id="retorno__sucesso__texto">A mensagem foi criptografada com sucesso</p>
+                <textarea class="retorno__sucesso__texto" id="retorno__sucesso__texto" placeholder="Digite uma mensagem" disabled="true"></textarea>
+                <button class="botao__copiar" id="botao__copiar" type="submit" onclick="copiarTexto()">Copiar</button>
             </div>
         </section>
     </main>
-    <footer>
-
+    <footer class="rodape">
+        <p>Desenvolvido por Clenilson Sousa</p>
     </footer>
 
     <script src="app.js" defer></script>
