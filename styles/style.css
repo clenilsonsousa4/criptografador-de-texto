@@ -288,6 +288,10 @@ body{
         position: static;
     }
 
+    .decodificador__retorno__vazio {
+        padding: 0;
+    }
+
     .retorno__vazio__imagem {
         display: none;
     }
