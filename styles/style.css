@@ -17,9 +17,8 @@
     margin: 0;
 }
 
-.cabecalho {
-    padding: 2% 0 0 5%;
-    display: flex;
+html, body {
+    height:100%;
 }
 
 body{
@@ -30,25 +29,31 @@ body{
     color: var(--cor-destaque);
 }
 
+.cabecalho {
+    padding: 2% 0 0 5%;
+    display: flex;
+}
+
 .decodificador {
     padding: 0 5% 0 0;
+    height: 100%;
     margin-top: -3%;
-    margin-bottom: -2%;
-    height: 90vh;
+    margin-bottom: -4%;
     display: flex;
     gap: 80px;
 }
 
 .decodificador__funcao {
-    padding: 6% 0 8% 15%;
+    padding: 6% 0 0 15%;
+    height: 75%;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     width: 80%;
 }
 
 .decodificador__funcao__texto {
-    height: 100%;
+    min-height: 40%;
+    height: 90%;
     background-color: transparent;
     border: 0;
     resize: none;
@@ -110,8 +115,7 @@ body{
 
 .decodificador__retorno {
     width: 50%;
-    height: auto;
-    margin-bottom: 0.5%;
+    min-height: 40%;
     position: relative;
     z-index: 1;
     display: flex;
@@ -206,10 +210,6 @@ body{
 
 .rodape {
     padding: 1% 35% 1% 10%;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    right: 0;
     background-color: var(--cor-destaque);
     display: flex;
     flex-direction: column;
@@ -281,9 +281,11 @@ body{
 
     .decodificador__retorno {
         padding: 2% 3%;
+        min-height: 30%;
+        margin-bottom: 5%;
         width: 90%;
-        height: 30%;
-        position: initial;
+        height: auto;
+        position: static;
     }
 
     .retorno__vazio__imagem {
@@ -305,7 +307,7 @@ body{
 
     .rodape {
         padding: 3%;
-        position: initial;
+        position: relative;
     }
 }
 
